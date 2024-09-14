@@ -7,22 +7,21 @@
 
 import Foundation
 
-struct User: Codable, Identifiable {
+struct User: Identifiable, Decodable {
     let id: Int
     let name: String
     let email: String
     let address: Address
-}
-
-struct Address: Codable {
-    let street: String
-    let suite: String
-    let city: String
-    let zipcode: String
-    let geo: Geo
-}
-
-struct Geo: Codable {
-    let lat: String
-    let lng: String
+    
+    enum CodingKeys: String, CodingKey {
+        case id, name, email, address
+    }
+    
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        self.id = try container.decode(Int.self, forKey: .id)
+        self.name = try container.decode(String.self, forKey: .name)
+        self.email = try container.decode(String.self, forKey: .email)
+        self.address = try container.decode(Address.self, forKey: .address)
+    }
 }

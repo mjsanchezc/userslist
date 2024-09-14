@@ -8,12 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		0226C55C2C96241B00E03450 /* MockNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0226C55B2C96241B00E03450 /* MockNetworkService.swift */; };
+		0226C55E2C962E5100E03450 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0226C55D2C962E5100E03450 /* Address.swift */; };
 		0228792E2C950BA700D4AEC4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0228792D2C950BA700D4AEC4 /* User.swift */; };
 		022879312C950BDC00D4AEC4 /* UserListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022879302C950BDC00D4AEC4 /* UserListView.swift */; };
 		022879342C950C0D00D4AEC4 /* UserListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022879332C950C0D00D4AEC4 /* UserListViewModel.swift */; };
 		022879372C950C2D00D4AEC4 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022879362C950C2D00D4AEC4 /* NetworkService.swift */; };
 		026C3F912C95FAEC00BDEA7A /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026C3F902C95FAEC00BDEA7A /* Utils.swift */; };
-		026C3F972C961F0300BDEA7A /* UserTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026C3F962C961F0300BDEA7A /* UserTests.swift */; };
+		026C3F972C961F0300BDEA7A /* ModelsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026C3F962C961F0300BDEA7A /* ModelsTests.swift */; };
 		026C3F9B2C961F2400BDEA7A /* UserListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026C3F9A2C961F2400BDEA7A /* UserListViewModelTests.swift */; };
 		026C3F9D2C961F3C00BDEA7A /* NetworkServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 026C3F9C2C961F3C00BDEA7A /* NetworkServiceTests.swift */; };
 		02D354C52C95F8640095C8F6 /* UsersListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02D354C42C95F8640095C8F6 /* UsersListApp.swift */; };
@@ -33,12 +34,13 @@
 
 /* Begin PBXFileReference section */
 		0226C55B2C96241B00E03450 /* MockNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkService.swift; sourceTree = "<group>"; };
+		0226C55D2C962E5100E03450 /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 		0228792D2C950BA700D4AEC4 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		022879302C950BDC00D4AEC4 /* UserListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListView.swift; sourceTree = "<group>"; };
 		022879332C950C0D00D4AEC4 /* UserListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListViewModel.swift; sourceTree = "<group>"; };
 		022879362C950C2D00D4AEC4 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		026C3F902C95FAEC00BDEA7A /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
-		026C3F962C961F0300BDEA7A /* UserTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTests.swift; sourceTree = "<group>"; };
+		026C3F962C961F0300BDEA7A /* ModelsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelsTests.swift; sourceTree = "<group>"; };
 		026C3F9A2C961F2400BDEA7A /* UserListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListViewModelTests.swift; sourceTree = "<group>"; };
 		026C3F9C2C961F3C00BDEA7A /* NetworkServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceTests.swift; sourceTree = "<group>"; };
 		02D354C42C95F8640095C8F6 /* UsersListApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersListApp.swift; sourceTree = "<group>"; };
@@ -76,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				0228792D2C950BA700D4AEC4 /* User.swift */,
+				0226C55D2C962E5100E03450 /* Address.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -116,7 +119,6 @@
 			isa = PBXGroup;
 			children = (
 				026C3F9C2C961F3C00BDEA7A /* NetworkServiceTests.swift */,
-				0226C55B2C96241B00E03450 /* MockNetworkService.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -125,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				026C3F9A2C961F2400BDEA7A /* UserListViewModelTests.swift */,
+				0226C55B2C96241B00E03450 /* MockNetworkService.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -132,7 +135,7 @@
 		026C3F952C961ED800BDEA7A /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				026C3F962C961F0300BDEA7A /* UserTests.swift */,
+				026C3F962C961F0300BDEA7A /* ModelsTests.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -390,6 +393,7 @@
 				022879312C950BDC00D4AEC4 /* UserListView.swift in Sources */,
 				02D354C52C95F8640095C8F6 /* UsersListApp.swift in Sources */,
 				026C3F912C95FAEC00BDEA7A /* Utils.swift in Sources */,
+				0226C55E2C962E5100E03450 /* Address.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -400,7 +404,7 @@
 				026C3F9D2C961F3C00BDEA7A /* NetworkServiceTests.swift in Sources */,
 				0226C55C2C96241B00E03450 /* MockNetworkService.swift in Sources */,
 				026C3F9B2C961F2400BDEA7A /* UserListViewModelTests.swift in Sources */,
-				026C3F972C961F0300BDEA7A /* UserTests.swift in Sources */,
+				026C3F972C961F0300BDEA7A /* ModelsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
