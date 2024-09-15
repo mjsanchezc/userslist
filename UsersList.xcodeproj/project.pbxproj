@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		0226C55C2C96241B00E03450 /* MockNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0226C55B2C96241B00E03450 /* MockNetworkService.swift */; };
 		0226C55E2C962E5100E03450 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0226C55D2C962E5100E03450 /* Address.swift */; };
+		0226C5602C964FD500E03450 /* SortAndSearchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0226C55F2C964FD500E03450 /* SortAndSearchBarView.swift */; };
+		0226C5622C96538B00E03450 /* UserInitialLetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0226C5612C96538B00E03450 /* UserInitialLetter.swift */; };
+		0226C5642C9654D300E03450 /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0226C5632C9654D300E03450 /* UserView.swift */; };
 		0228792E2C950BA700D4AEC4 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0228792D2C950BA700D4AEC4 /* User.swift */; };
 		022879312C950BDC00D4AEC4 /* UserListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022879302C950BDC00D4AEC4 /* UserListView.swift */; };
 		022879342C950C0D00D4AEC4 /* UserListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 022879332C950C0D00D4AEC4 /* UserListViewModel.swift */; };
@@ -35,6 +38,9 @@
 /* Begin PBXFileReference section */
 		0226C55B2C96241B00E03450 /* MockNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkService.swift; sourceTree = "<group>"; };
 		0226C55D2C962E5100E03450 /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
+		0226C55F2C964FD500E03450 /* SortAndSearchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortAndSearchBarView.swift; sourceTree = "<group>"; };
+		0226C5612C96538B00E03450 /* UserInitialLetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInitialLetter.swift; sourceTree = "<group>"; };
+		0226C5632C9654D300E03450 /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
 		0228792D2C950BA700D4AEC4 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		022879302C950BDC00D4AEC4 /* UserListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListView.swift; sourceTree = "<group>"; };
 		022879332C950C0D00D4AEC4 /* UserListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListViewModel.swift; sourceTree = "<group>"; };
@@ -87,6 +93,9 @@
 			isa = PBXGroup;
 			children = (
 				022879302C950BDC00D4AEC4 /* UserListView.swift */,
+				0226C55F2C964FD500E03450 /* SortAndSearchBarView.swift */,
+				0226C5612C96538B00E03450 /* UserInitialLetter.swift */,
+				0226C5632C9654D300E03450 /* UserView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -388,11 +397,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				0228792E2C950BA700D4AEC4 /* User.swift in Sources */,
+				0226C5622C96538B00E03450 /* UserInitialLetter.swift in Sources */,
 				022879342C950C0D00D4AEC4 /* UserListViewModel.swift in Sources */,
 				022879372C950C2D00D4AEC4 /* NetworkService.swift in Sources */,
 				022879312C950BDC00D4AEC4 /* UserListView.swift in Sources */,
 				02D354C52C95F8640095C8F6 /* UsersListApp.swift in Sources */,
 				026C3F912C95FAEC00BDEA7A /* Utils.swift in Sources */,
+				0226C5642C9654D300E03450 /* UserView.swift in Sources */,
+				0226C5602C964FD500E03450 /* SortAndSearchBarView.swift in Sources */,
 				0226C55E2C962E5100E03450 /* Address.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -26,6 +26,7 @@ class UserTests: XCTestCase {
               "lng": "81.1496"
             }
           },
+          "phone": "1-770-736-8031 x56442"
         }
         """
         let jsonData = json.data(using: .utf8)!
@@ -52,7 +53,8 @@ class UserTests: XCTestCase {
               "lat": "-43.9509",
               "lng": "-34.4618"
             }
-          }
+          },
+          "phone": "010-692-6593 x09125"
         }
         """
         let jsonData = json.data(using: .utf8)!

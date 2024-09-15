@@ -9,52 +9,38 @@ import SwiftUI
 
 struct UserListView: View {
     @ObservedObject var viewModel: UserListViewModel
+    @State var inputText = ""
     
     var body: some View {
-        NavigationView {
-            List(viewModel.users) { user in
-                HStack(alignment: .top) {
-                    UserInitialLetter(name: user.name)
-                        .aspectRatio(contentMode: .fill)
-                        .frame(width: 55, height: 55, alignment: .center)
-                        .accessibilityLabel(user.name)
-                    VStack(alignment: .leading) {
-                        Text(user.name)
-                            .font(.headline)
-                        Text(user.email)
-                            .font(.subheadline)
-                        Text("\(user.address.street), \(user.address.city)")
-                            .font(.subheadline)
+        VStack {
+            SortAndSearchBarView(inputText: $inputText)
+                .environmentObject(viewModel)
+                .padding(.bottom, 5)
+                .overlay(Divider()
+                            .frame(width: UIScreen.main.bounds.width)
+                            .background(Color.black), alignment: .bottom)
+                .padding(.bottom, 5)
+            
+            ScrollView(showsIndicators: false) {
+                VStack(alignment: .leading) {
+                    ForEach(viewModel.users.filter({ user in
+                        filterSearchText(user)
+                    }), id: \.self) { user in
+                        UserView(user: user)
                     }
                 }
-                .accessibilityElement(children: .contain)
-                .accessibilityLabel(user.name)
             }
-            .navigationTitle("Users")
             .onAppear {
                 viewModel.fetchUsers()
             }
         }
     }
-}
-
-struct UserInitialLetter: View {
-    let name: String
     
-    var initial: String {
-        return String(name.prefix(1)).uppercased()
-    }
-    
-    var body: some View {
-        ZStack {
-            Circle()
-                .fill(Color.blue)
-                .frame(width: 55, height: 55)
-            
-            Text(initial)
-                .font(.largeTitle)
-                .foregroundColor(.white)
-                .bold()
+    private func filterSearchText(_ user: User) -> Bool {
+        if inputText == "" || user.name.localizedCaseInsensitiveContains(inputText) {
+            return true
+        } else {
+            return false
         }
     }
 }

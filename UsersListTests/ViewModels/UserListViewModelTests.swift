@@ -43,7 +43,8 @@ class UserListViewModelTests: XCTestCase {
                   "lat": "-37.3159",
                   "lng": "81.1496"
                 }
-              }
+              },
+              "phone": "1-770-736-8031 x56442"
             },
             {
               "id": 2,
@@ -57,7 +58,8 @@ class UserListViewModelTests: XCTestCase {
                   "lat": "-43.9509",
                   "lng": "-34.4618"
                 }
-              }
+              },
+              "phone": "010-692-6593 x09125"
             }
         ]
         """
@@ -115,7 +117,8 @@ class UserListViewModelTests: XCTestCase {
                   "lat": "-37.3159",
                   "lng": "81.1496"
                 }
-              }
+              },
+              "phone": "1-770-736-8031 x56442"
             }
         ]
         """
