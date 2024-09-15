@@ -8,15 +8,20 @@
 import Alamofire
 
 class NetworkService {
-    func fetchUsers(completion: @escaping (Result<[User], AFError>) -> Void) {
-        AF.request(Constants.userURL).responseDecodable(of: [User].self) { response in
-            switch response.result {
-            case .success(let users):
-                completion(.success(users))
-            
-            case .failure(let error):
-                completion(.failure(error))
+    func fetchUsers(currentPage: Int, pageSize: Int, completion: @escaping (Result<[User], AFError>) -> Void) {
+        let params: [String: Any] = ["_page": currentPage, "_limit": pageSize]
+        
+        AF.request(Constants.userURL, parameters: params).responseDecodable(of: [User].self) { response in
+            DispatchQueue.main.async {
+                switch response.result {
+                case .success(let users):
+                    completion(.success(users))
+                
+                case .failure(let error):
+                    completion(.failure(error))
+                }
             }
+            
         }
     }
 }

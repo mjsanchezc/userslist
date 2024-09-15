@@ -17,20 +17,29 @@ class UserListViewModel: ObservableObject {
     @Published var phoneSort = SortBy.phoneASC
     
     private let networkService: NetworkService
+    private var currentPage = 1
+    private let pageSize = 4
+    private var canLoadMore = true
     
     init(networkService: NetworkService = NetworkService()) {
         self.networkService = networkService
     }
     
     func fetchUsers() {
+        guard !isLoading && canLoadMore else { return }
+        
         isLoading = true
-        networkService.fetchUsers { [weak self] result in
+        networkService.fetchUsers(currentPage: currentPage, pageSize: pageSize) { [weak self] result in
             DispatchQueue.main.async {
                 self?.isLoading = false
                 
                 switch result {
-                case .success(let users):
-                    self?.users = users
+                case .success(let newUsers):
+                    if newUsers.count < self!.pageSize {
+                        self?.canLoadMore = false
+                    }
+                    self?.users.append(contentsOf: newUsers)
+                    self?.currentPage += 1
                 case .failure(let error):
                     self?.errorMessage = error.localizedDescription
                 }

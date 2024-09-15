@@ -18,7 +18,7 @@ struct UserInitialLetter: View {
         ZStack {
             Circle()
                 .fill(Color.blue)
-                .frame(width: 55, height: 55)
+                .frame(width: 80, height: 80)
             
             Text(initial)
                 .font(.largeTitle)

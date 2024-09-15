@@ -15,11 +15,10 @@ struct UserListView: View {
         VStack {
             SortAndSearchBarView(inputText: $inputText)
                 .environmentObject(viewModel)
-                .padding(.bottom, 5)
+                .padding(.bottom, 10)
                 .overlay(Divider()
                             .frame(width: UIScreen.main.bounds.width)
                             .background(Color.black), alignment: .bottom)
-                .padding(.bottom, 5)
             
             ScrollView(showsIndicators: false) {
                 VStack(alignment: .leading) {
@@ -27,6 +26,19 @@ struct UserListView: View {
                         filterSearchText(user)
                     }), id: \.self) { user in
                         UserView(user: user)
+                            .padding()
+                        
+                        if user == viewModel.users.last {
+                            GeometryReader { geo in
+                                Color.clear
+                                    .onAppear {
+                                        if !viewModel.isLoading {
+                                            viewModel.fetchUsers()
+                                        }
+                                    }
+                            }
+                            .frame(height: 1)
+                        }
                     }
                 }
             }
