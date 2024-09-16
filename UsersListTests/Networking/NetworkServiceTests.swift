@@ -12,9 +12,11 @@ import Alamofire
 class NetworkServiceTests: XCTestCase {
     func testFetchUsersSuccess() {
         let networkService = NetworkService()
+        var currentPage = 1
+        let pageSize = 4
 
         let expectation = XCTestExpectation(description: "Fetch users")
-        networkService.fetchUsers { result in
+        networkService.fetchUsers(currentPage: currentPage, pageSize: pageSize) { result in
             switch result {
             case .success(let users):
                 XCTAssertEqual(users.count, 10)
