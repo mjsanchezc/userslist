@@ -12,7 +12,7 @@ class MockNetworkService: NetworkService {
     var mockResponse: Data?
     var shouldReturnError: Bool = false
     
-    override func fetchUsers(completion: @escaping (Result<[User], AFError>) -> Void) {
+    func fetchUsers(completion: @escaping (Result<[User], AFError>) -> Void) {
         if shouldReturnError {
             let error = AFError.responseSerializationFailed(reason: .inputDataNilOrZeroLength)
             completion(.failure(error))
